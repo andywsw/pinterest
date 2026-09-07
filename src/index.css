@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f7f7f7;
+  color: #111;
+}
+
+.app-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e60023;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  background-color: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* 핀터레스트 Masonry 그리드 레이아웃 */
+.masonry-grid {
+  column-count: 2;
+  column-gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 4;
+  }
+}
+
+.pin-card {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.pin-card:hover {
+  transform: translateY(-2px);
+}
+
+.pin-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.pin-info {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pin-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.save-btn {
+  background-color: #e60023;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.save-btn:hover {
+  background-color: #ad081b;
+}
+
+.save-btn.saved {
+  background-color: #111;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 0;
+  color: #888;
+  font-size: 1.1rem;
+}
